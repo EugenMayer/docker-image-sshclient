@@ -5,4 +5,7 @@ RUN apk --update add openssh-client bash \
  && chmod 700 ~/.ssh \
  && touch ~/.ssh/id_rsa \
  && chmod u=r,g=,o= ~/.ssh/id_rsa \
- && echo "Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null\n  IdentityFile ~/.ssh/id_rsa >> /root/.ssh/config" > ~/.ssh/config
+ && echo -e "Host *" > ~/.ssh/config \
+ && echo -e "  StrictHostKeyChecking no" >> ~/.ssh/config \
+ && echo -e "  UserKnownHostsFile=/dev/null" >> ~/.ssh/config \
+ && echo -e "  IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
