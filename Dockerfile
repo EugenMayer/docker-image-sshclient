@@ -1,6 +1,6 @@
 FROM alpine:edge
 USER root
-RUN apk --update add openssh-client bash \
+RUN apk --update add openssh-client bash rsync \
  && mkdir ~/.ssh \
  && chmod 700 ~/.ssh \
  && touch ~/.ssh/id_rsa \
